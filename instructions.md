@@ -13,8 +13,8 @@ Implement the necessary object models and the utility methods as specified in th
 * Be able to represent connections between users
   * Connections between users are bi-directional
 * Provide a method to calculate the degrees of separation between two users
-* If a user isn’t connected to another user, return -1
-* Example:
-  * If U1 is connected to U2, and U2 is connected to U3
-  * U1 is 1 degree of separation from U2, and 2 degrees of separation from U3
-  * U2 is 1 degree of separation from U3
+  * If a user isn’t connected to another user, return -1
+  * Example:
+    * If U1 is connected to U2, and U2 is connected to U3
+      * U1 is 1 degree of separation from U2, and 2 degrees of separation from U3
+      * U2 is 1 degree of separation from U3
