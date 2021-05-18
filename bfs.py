@@ -1,11 +1,12 @@
 from data import users
+from collections import deque
 
 def BFS(graph, user1, user2):
     """ Find shortest path between 2 user nodes in a graph"""
     explored = []
      
     # Queue for traversing the graph in the BFS
-    queue = [[user1]]
+    queue = deque([[user1]])
      
     # If the desired user is already found
     if user1 == user2:
@@ -14,7 +15,7 @@ def BFS(graph, user1, user2):
      
     # Loop to traverse the graph with the help of the queue
     while queue:
-        path = queue.pop(0)
+        path = queue.popleft()
         node = path[-1]
          
         # Condition to check if the current node is not visited

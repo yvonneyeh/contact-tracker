@@ -7,6 +7,7 @@ users = {'Alex': ['Becky', 'Erica', 'Chris', 'Grace'],
         'Frank': ['Chris', 'Becky'],
         'Grace': ['Alex', 'Becky', 'Erica', 'Chris']}
 
+
 details  = [
     {'email': 'alex@test.com',
     'username': 'aa',
@@ -15,7 +16,6 @@ details  = [
     'city': 'Albany',
     'state': 'NY'
     },
-    {
     {'email': 'becky@test.com',
     'username': 'bb',
     'first_name': 'Becky',
@@ -23,7 +23,6 @@ details  = [
     'city': 'Brooklyn',
     'state': 'NY'
     },
-    {
     {'email': 'chris@test.com',
     'username': 'cc',
     'first_name': 'Chris',
@@ -31,7 +30,6 @@ details  = [
     'city': 'Cleveland',
     'state': 'OH'
     },
-    {
     {'email': 'danny@test.com',
     'username': 'dd',
     'first_name': 'Danny',
@@ -39,7 +37,6 @@ details  = [
     'city': 'Dallas',
     'state': 'TX'
     },
-    {
     {'email': 'erica@test.com',
     'username': 'ee',
     'first_name': 'Erica',
@@ -47,7 +44,6 @@ details  = [
     'city': 'Eugene',
     'state': 'OR'
     },
-    {
     {'email': 'frank@test.com',
     'username': 'ff',
     'first_name': 'Frank',
@@ -55,7 +51,6 @@ details  = [
     'city': 'Frankfurt',
     'state': 'DEU'
     },
-    {
     {'email': 'grace@test.com',
     'username': 'gg',
     'first_name': 'Grace',
