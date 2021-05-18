@@ -59,16 +59,10 @@ def connect_to_db(flask_app, db_uri='postgresql:///contacts', echo=True):
     db.app = flask_app
     db.init_app(flask_app)
 
-    print('Connected to the db!')        
+    print('Connected to DB!')        
 
 
 
 if __name__ == '__main__':
-    print("we're in model")
     from app import app
-
-    # Call connect_to_db(app, echo=False) if your program output gets
-    # too annoying; this will tell SQLAlchemy not to print out every
-    # query it executes.
-
-    connect_to_db(app)
+    connect_to_db(app, echo=False)
