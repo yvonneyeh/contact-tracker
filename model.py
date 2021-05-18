@@ -25,7 +25,7 @@ class User(db.Model):
     
     # connections: a list of Connection objects associated with user.
     # connection = db.relationship('Connection')
-    
+
     def __repr__(self):
         """Show info about user."""
 
@@ -42,10 +42,33 @@ class Connection(db.Model):
     user_2 = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
     connect_date = db.Column(db.DateTime)
 
-    U1 = db.relationship('Cellist', foreign_keys=[user_1], backref='connections')
-    U2 = db.relationship('Cellist', foreign_keys=[user_2], backref='connections')
+    U1 = db.relationship('User', foreign_keys=[user_1], backref='connections')
+    U2 = db.relationship('User', foreign_keys=[user_2], backref='connections')
 
     def __repr__(self):
         """Show info about connection."""
         
         return f'<Connection connect_id: {self.connect_id} U1: {self.user_1} U2: {self.user_2}>'
+
+
+def connect_to_db(flask_app, db_uri='postgresql:///contacts', echo=True):
+    flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
+    # flask_app.config['SQLALCHEMY_ECHO'] = echo
+    flask_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+    db.app = flask_app
+    db.init_app(flask_app)
+
+    print('Connected to the db!')        
+
+
+
+if __name__ == '__main__':
+    print("we're in model")
+    from app import app
+
+    # Call connect_to_db(app, echo=False) if your program output gets
+    # too annoying; this will tell SQLAlchemy not to print out every
+    # query it executes.
+
+    connect_to_db(app)
