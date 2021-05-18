@@ -7,7 +7,7 @@ users = {'Alex': ['Becky', 'Erica', 'Chris', 'Grace'],
         'Frank': ['Chris', 'Becky'],
         'Grace': ['Alex', 'Becky', 'Erica', 'Chris']}
 
-details  = {
+details  = [
     {'email': 'alex@test.com',
     'username': 'aa',
     'first_name': 'Alex',
@@ -62,5 +62,4 @@ details  = {
     'last_name': 'G.',
     'city': 'Giza',
     'state': 'EGY'
-    },
-}
+    }]
