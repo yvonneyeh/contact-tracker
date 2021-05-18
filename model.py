@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
+
 class User(db.Model):
     """An app user."""
 
@@ -17,11 +18,12 @@ class User(db.Model):
     first_name = db.Column(db.String(100))
     last_name = db.Column(db.String(100))
     img_url = db.Column(db.String, nullable=False)
-    lat = db.Column(db.Float)
-    lng = db.Column(db.Float)
+    lat = db.Column(db.DECIMAL(9,6))
+    lng = db.Column(db.DECIMAL(9,6))
     address = db.Column(db.String(100))
     city = db.Column(db.String(100))
     state = db.Column(db.String(3))
+
     
     # connections: a list of Connection objects associated with user.
     # connection = db.relationship('Connection')
@@ -49,6 +51,7 @@ class Connection(db.Model):
         """Show info about connection."""
         
         return f'<Connection connect_id: {self.connect_id} U1: {self.user_1} U2: {self.user_2}>'
+
 
 
 def connect_to_db(flask_app, db_uri='postgresql:///contacts', echo=True):
