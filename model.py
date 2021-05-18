@@ -66,3 +66,4 @@ def connect_to_db(flask_app, db_uri='postgresql:///contacts', echo=True):
 if __name__ == '__main__':
     from app import app
     connect_to_db(app, echo=False)
+    db.create_all()
