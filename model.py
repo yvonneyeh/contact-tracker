@@ -19,13 +19,13 @@ class User(db.Model):
     img_url = db.Column(db.String, nullable=False)
     lat = db.Column(db.Float)
     lng = db.Column(db.Float)
-    address = db.Column(db.String)
-    city = db.Column(db.String)
-    state = db.Column(db.String)
-
-    connection = db.relationship('Connection')
-
-
+    address = db.Column(db.String(100))
+    city = db.Column(db.String(100))
+    state = db.Column(db.String(3))
+    
+    # connections: a list of Connection objects associated with user.
+    # connection = db.relationship('Connection')
+    
     def __repr__(self):
         """Show info about user."""
 
@@ -42,7 +42,8 @@ class Connection(db.Model):
     user_2 = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
     connect_date = db.Column(db.DateTime)
 
-    # user = db.relationship('User', backref='connections')
+    U1 = db.relationship('Cellist', foreign_keys=[user_1], backref='connections')
+    U2 = db.relationship('Cellist', foreign_keys=[user_2], backref='connections')
 
     def __repr__(self):
         """Show info about connection."""
