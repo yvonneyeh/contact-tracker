@@ -78,3 +78,8 @@ def get_connect_by_id(connect_id):
 
     return Connection.query.filter(Connection.connect_id == connect_id).first() 
 
+
+def get_connect_by_user_id(user_id):
+    """Return Connection given its ID"""
+
+    return Connection.query.filter(Connection.user_id == user_id).all() 
